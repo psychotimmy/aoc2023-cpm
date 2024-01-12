@@ -11,7 +11,9 @@ this repository. They are available here: https://adventofcode.com/2023
 
 In turbo pascal, use the COM compilation option to create dayxx-y.com executables.
 
+Input data file names are expected to be of the form: dayxxin.txt
+
 Benchmarks run on an RC2040 (a RC2014 emulator) with the version of BIGILIB.PAS
 current at the time. Performance enhancements to this library are ongoing!
 
-Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data.
+Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data. 
