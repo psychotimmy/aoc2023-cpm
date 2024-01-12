@@ -22,4 +22,7 @@ Day1-2.pas - runs in 47 seconds using the puzzle data.
 
 Day4-1.pas - runs in 17 seconds using the puzzle data. This does not require BIGILIB.PAS.
 
+Day4-2.pas - runs in 2 seconds using the sample data and will take many hours (still running!) if
+compiled for the puzzle data (see comments on the constants at the top of the source code).
+
 Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data. 
