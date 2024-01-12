@@ -3,7 +3,7 @@ Advent of Code 2023 - Turbo Pascal 3.01A under CP/M 2.2.
 
 Some examples from Advent of Code 2023 written in Turbo Pascal 3.01A under CP/M 2.2
 
-These require my Pascal Big Integer library - BIGILIB.PAS - which can
+Most require my Pascal Big Integer library - BIGILIB.PAS - which can
 be found here: https://github.com/psychotimmy/PascalBigIntegers
 
 As per the advent of code rules, the sample and puzzle data are not included in 
@@ -19,5 +19,7 @@ current at the time. Performance enhancements to this library are ongoing!
 Day1-1.pas - runs in 18 seconds using the puzzle data.
 
 Day1-2.pas - runs in 47 seconds using the puzzle data.
+
+Day4-1.pas - runs in 17 seconds using the puzzle data. This does not require BIGILIB.PAS.
 
 Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data. 
