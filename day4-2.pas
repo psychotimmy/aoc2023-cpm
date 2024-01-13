@@ -78,18 +78,13 @@ begin
     writeln(todo,' copies to process');
     if gt(cardinfo[cardno,MATCHES],'0') then
     begin
-      while gt(todo,'32000') do
+      if gt(todo,'0') then
       begin
         val(cardinfo[cardno,MATCHES],kmatch,ierr);
         for i := 1 to kmatch do
           if cardno + i <= cardcount then
-            cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],'32000');
-        todo := sub(todo,'32000')
-      end;
-      val(cardinfo[cardno,MATCHES],kmatch,ierr);
-      for i := 1 to kmatch do
-        if cardno + i <= cardcount then
-          cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],todo)
+            cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],todo);
+      end
     end
   end;
 
