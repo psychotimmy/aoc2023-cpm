@@ -1,9 +1,9 @@
 program day4p2(output);
 {$I BIGILIB.PAS}
 const
-  WINNING = 5;  { 5 for sample data, 10 for real puzzle input }
-  LOTTONO = 8;  { 8 for sample data, 25 for real puzzle input }
-  LINES = 6;   { 6 for sample data, 213 for real puzzle input }
+  WINNING = 10;  { 5 for sample data, 10 for real puzzle input }
+  LOTTONO = 25;  { 8 for sample data, 25 for real puzzle input }
+  LINES = 213;   { 6 for sample data, 213 for real puzzle input }
   MATCHES = 1;
   COPIES = 2;
 type
@@ -78,14 +78,18 @@ begin
     writeln(todo,' copies to process');
     if gt(cardinfo[cardno,MATCHES],'0') then
     begin
-      while gt(todo,'0') do
+      while gt(todo,'32000') do
       begin
         val(cardinfo[cardno,MATCHES],kmatch,ierr);
         for i := 1 to kmatch do
           if cardno + i <= cardcount then
-            cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],'1');
-        todo := sub(todo,'1')
-      end
+            cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],'32000');
+        todo := sub(todo,'32000')
+      end;
+      val(cardinfo[cardno,MATCHES],kmatch,ierr);
+      for i := 1 to kmatch do
+        if cardno + i <= cardcount then
+          cardinfo[cardno+i,COPIES] := add(cardinfo[cardno+i,COPIES],todo)
     end
   end;
 
