@@ -24,4 +24,6 @@ Day4-1.pas - runs in 17 seconds using the puzzle data. This does not require BIG
 
 Day4-2.pas - runs in 37 seconds using the puzzle data.
 
+Day16-1.pas - runs in 27 seconds (including the time to print the final grid). This does not require BIGILIB.PAS.
+
 Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data. 
