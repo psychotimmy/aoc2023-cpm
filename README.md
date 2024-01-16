@@ -3,7 +3,7 @@ Advent of Code 2023 - Turbo Pascal 3.01A under CP/M 2.2.
 
 Some examples from Advent of Code 2023 written in Turbo Pascal 3.01A under CP/M 2.2. Converted from my original solutions written using Free Pascal on a Raspberry Pi.
 
-Most require my Pascal Big Integer library - BIGILIB.PAS - which can
+Unless stated, these solutions require my Pascal Big Integer library - BIGILIB.PAS - which can
 be found here: https://github.com/psychotimmy/PascalBigIntegers
 
 As per the advent of code rules, the sample and puzzle data are not included in 
