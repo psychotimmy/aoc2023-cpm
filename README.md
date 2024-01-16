@@ -30,6 +30,8 @@ Day4-1.pas - runs in 17 seconds using the puzzle data. This does not require BIG
 
 Day4-2.pas - runs in 37 seconds using the puzzle data.
 
+Day6-1.pas - runs in 4 seconds using the puzzle data.
+
 Day7-1.pas - runs in 4 minutes 12 seconds using the puzzle data. Replacing the insertion sort with a better algorithm will improve execution time.
 
 Day7-2.pas - runs in 4 minutes 12 seconds using the puzzle data. As for part 1, replacing the insertion sort with a better algorithm will improve execution time.
