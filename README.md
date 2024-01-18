@@ -51,3 +51,5 @@ Day16-1.pas - runs in 27 seconds (including the time to print the final grid) us
 Day16-2.pas - runs in 1 hour 22 minutes (440 repetitions of part 1). This does not require BIGILIB.PAS.
 
 Day18-1.pas - runs in 3 minutes 17 seconds using the puzzle data. 
+
+Day21-1.pas - runs in 7 minutes 30 seconds using the puzzle data. This does not require BIGILIB.PAS.
