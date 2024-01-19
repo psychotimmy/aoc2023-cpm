@@ -32,7 +32,7 @@ Day4-2.pas - runs in 37 seconds using the puzzle data.
 
 Day6-1.pas - runs in 4 seconds using the puzzle data.
 
-Day6-2.pas - runs in 2 minutes 39 seconds using the puzzle data. The main bottleneck is the integer square root function in BIGILIB.PAS.
+Day6-2.pas - runs in 2 minutes 37 seconds using the puzzle data. The main bottleneck is the integer square root function in BIGILIB.PAS.
 
 Day7-1.pas - runs in 4 minutes 12 seconds using the puzzle data. Replacing the insertion sort with a better algorithm will improve execution time.
 
