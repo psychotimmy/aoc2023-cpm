@@ -38,7 +38,7 @@ Day7-1.pas - runs in 4 minutes 12 seconds using the puzzle data. Replacing the i
 
 Day7-2.pas - runs in 4 minutes 12 seconds using the puzzle data. As for part 1, replacing the insertion sort with a better algorithm will improve execution time.
 
-Day8-1.pas - runs in 12 minutes 44 seconds using the puzzle data. The data structure used to store and search the map is sub-optimal! This does not require BIGILIB.PAS.
+Day8-1.pas - runs in 2 minutes 1 second using the puzzle data. The data structure used to store and search the map is sub-optimal! This does not require BIGILIB.PAS.
 
 Day9-1.pas - runs in 4 minutes 47 seconds using the puzzle data.
 
