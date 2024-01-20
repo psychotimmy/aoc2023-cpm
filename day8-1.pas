@@ -97,10 +97,9 @@ begin
   begin
     direction := turns[(total mod numturns)+1];
     if direction = 'L' then
-      idx := thisnode.lno
+      thisnode := map[thisnode.lno]
     else
-      idx := thisnode.rno;
-    thisnode := map[idx];
+      thisnode := map[thisnode.rno];
     total := total+1;
     if (total mod 1000) = 0 then
       writeln(total,' steps taken so far')
