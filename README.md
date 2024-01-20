@@ -44,6 +44,8 @@ Day9-1.pas - runs in 4 minutes 47 seconds using the puzzle data.
 
 Day9-2.pas - runs in 4 minutes 34 seconds using the puzzle data.
 
+Day11-1.pas - runs in 14 minutes 56 seconds using the puzzle data.
+
 Day13-1.pas - runs in 26 seconds using the puzzle data.
 
 Day13-2.pas - runs in 16 minutes 42 seconds using the puzzle data.
