@@ -60,10 +60,14 @@ end;
 function manhattan(x1,y1,x2,y2: BigInt):BigInt;
 var temp1, temp2:BigInt;
 begin
-  temp1 := sub(x1,x2);
-  temp2 := sub(y1,y2);
-  if lt(temp1,'0') then temp1 := multiply(temp1,'-1');
-  if lt(temp2,'0') then temp2 := multiply(temp2,'-1');
+  if gt(x1,x2) then
+    temp1 := sub(x1,x2)
+  else
+    temp1 := sub(x2,x1);
+  if gt(y1,y2) then
+    temp2 := sub(y1,y2)
+  else
+    temp2 := sub(y2,y1);
   manhattan := add(temp1,temp2)
 end;
 
