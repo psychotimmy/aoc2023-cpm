@@ -16,8 +16,7 @@ var
   gcoords: array [1..450] of coords;
   galx, x, galy, y, gtotal, xai, yai, ierr: integer;
   exprows, expcols : expset;
-  xa,ya,xb,yb: BigInt;
-  gdistb, total: BigInt;
+  xa, ya, total: BigInt;
 
 procedure populategalx(ln: str140; row:integer);
 var i: integer;
@@ -126,17 +125,9 @@ begin
   total := '0';
   for x := 1 to gtotal-1 do
   begin
-    xa := gcoords[x].xx;
-    ya := gcoords[x].yy;
     for y := x+1 to gtotal do
-    begin
-      xb := gcoords[y].xx;
-      yb := gcoords[y].yy;
-
       { Find the manhattan distance between the pair }
-      gdistb := manhattan(xa,ya,xb,yb);
-      total := add(total,gdistb)
-    end;
+      total := add(total,manhattan(gcoords[x].xx,gcoords[x].yy,gcoords[y].xx,gcoords[y].yy));
     writeln('Running total of minimum distances after ',x,' galaxies is ',total)
   end;
   writeln ('');
