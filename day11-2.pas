@@ -42,14 +42,14 @@ var i: integer;
     toadd: BigInt;
 begin
   toadd := '0';
-  c := '0';
+  str(cin,c);
   for i:= 1 to cin-1 do     { Don't need to check row/col }
     if i in expcols then  { the galaxy coord is in }
       toadd := add(toadd,'999999');
   c := add(c,toadd);
 
   toadd := '0';
-  r := '0';
+  str(rin,r);
   for i:= 1 to rin-1 do
     if i in exprows then
        toadd := add(toadd,'999999');
