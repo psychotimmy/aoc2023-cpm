@@ -46,8 +46,8 @@ Day9-2.pas - runs in 4 minutes 34 seconds using the puzzle data.
 
 Day11-1.pas - runs in 14 minutes 56 seconds using the puzzle data.
 
-Day11-2.pas - takes 1 minute 18 seconds for the universe to be created and expanded; 4 minutes 50 seconds for the 441 galaxy pairs of galaxy 1 to be evaluated 
-and is likely to take somewhere in the order of a day for a complete run. The main difference between the two parts is the speed of BIGILIB.PAS as the algorithm is otherwise identical.
+Day11-2.pas - takes 1 minute 43 seconds for the 441 galaxy pairs of galaxy 1 to be evaluated and is likely to take somewhere in the order of 2.5 hours 
+for a complete run. The main difference between the two parts is the speed of BIGILIB.PAS as the algorithm is otherwise identical.
 
 Day13-1.pas - runs in 26 seconds using the puzzle data.
 
