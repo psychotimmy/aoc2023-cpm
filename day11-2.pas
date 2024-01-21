@@ -44,7 +44,7 @@ begin
   toadd := '0';
   str(cin,c);
   for i:= 1 to cin-1 do     { Don't need to check row/col }
-    if i in expcols then  { the galaxy coord is in }
+    if i in expcols then    { the galaxy coord is in }
       toadd := add(toadd,'999999');
   c := add(c,toadd);
 
