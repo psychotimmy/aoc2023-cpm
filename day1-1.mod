@@ -1,7 +1,7 @@
 MODULE day1p1;
 FROM Terminal IMPORT WriteString, WriteLn;
 FROM SmallIO IMPORT WriteCard;
-FROM Files IMPORT FileName, FILE, Lookup;
+FROM Files IMPORT FILE, Lookup;
 FROM Streams IMPORT Connect, Disconnect, STREAM, input,
                     ReadChar, EOS;
 TYPE
