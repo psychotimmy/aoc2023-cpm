@@ -19,7 +19,7 @@ VAR
   reply: INTEGER;
 BEGIN
   WriteString('Advent of Code 2023 Day 1, part 1');
-  WriteLn;
+  WriteLn; WriteLn;
   Lookup(calFile,'day1in.txt',reply);
   IF reply < 0 THEN
     WriteString('day1in.txt not found!');
