@@ -15,22 +15,22 @@ VAR
   calFile: FILE;
   calStream: STREAM;
   ch: CHAR;
-  line: ARRAY [0..80] OF CHAR;
+  line, lineb: ARRAY [0..70] OF CHAR;
   fwd: ARRAY [1..ALLD] OF Str5;
   bck: ARRAY [1..ALLD] OF Str5;
-  fdx, idx, ipos, jdx, ans, anst, proc, total: CARDINAL;
+  fdx, idx, spos, epos, jdx, anss, anse, proc, total: CARDINAL;
   reply: INTEGER;
 
-PROCEDURE reverse(VAR str: ARRAY OF CHAR);
-VAR ch: ARRAY [0..80] OF CHAR;
-    i,len: CARDINAL;
+PROCEDURE reverse(str1: ARRAY OF CHAR; VAR str2: ARRAY OF CHAR);
+(* Assumes size str2 >= size str1 *)
+VAR i,len: CARDINAL;
 BEGIN
-  len := Length(str)-1;
-  FOR i := 0 TO len DO
-    ch[i] := str[len-i];
+  len := Length(str1);
+  FOR i := 0 TO len-1 DO
+    str2[i] := str1[len-i-1];
   END;
-  FOR i := 0 TO len DO
-    str[i] := ch[i];
+  IF HIGH(str2) > len-1 THEN
+    str2[len] := CHAR(0);
   END;
 END reverse;
 
@@ -38,8 +38,8 @@ PROCEDURE initfb();
 VAR i: CARDINAL;
 BEGIN
   FOR i := 1 TO 9 DO
-    fwd[i,0] := CHR(ORD0+i);
-    bck[i,0] := fwd[i,0]
+   fwd[i,0] := CHR(ORD0+i);
+   bck[i,0] := fwd[i,0]
   END;
   fwd[10] := 'one';
   fwd[11] := 'two';
@@ -51,8 +51,7 @@ BEGIN
   fwd[17] := 'eight';
   fwd[18] := 'nine';
   FOR i := 10 TO ALLD DO
-    bck[i] := fwd[i];
-    reverse(bck[i]);
+    reverse(fwd[i],bck[i]);
   END;
 END initfb;
 
@@ -76,47 +75,49 @@ BEGIN
       INC(idx);
       ReadChar(calStream,ch);
     END;
+    INC(proc);
     (* Null terminate line *)
     line[idx] := CHAR(0);
-    INC(proc);
+    (* And get the reverse *)
+    reverse(line,lineb);
 
-    ipos := idx;
+    spos := idx;
+    epos := idx;
     jdx := 1;
-    WHILE (jdx <= ALLD) & (ipos # 0) DO
-      fdx := Pos(fwd[jdx],line,0);
-      IF fdx < ipos THEN
-        ipos := fdx;
-        anst := 0;
-        IF jdx > 9 THEN
-          anst := (jdx-9)*10
-        ELSE
-          anst := jdx*10
+    WHILE ((spos > 0) OR (epos > 0)) & (jdx <= ALLD) DO
+      IF spos > 0 THEN
+        fdx := Pos(fwd[jdx],line,0);
+        IF fdx # HIGH(line)+1 THEN
+          IF fdx < spos THEN
+            spos := fdx;
+            anss := jdx;
+          END;
+        END;
+      END;
+      IF epos > 0 THEN
+        fdx := Pos(bck[jdx],lineb,0);
+        IF fdx # HIGH(lineb)+1 THEN
+          IF fdx < epos THEN
+            epos := fdx;
+            anse := jdx;
+          END;
         END;
       END;
       INC(jdx);
     END;
 
-    ans := anst;
-    reverse(line);
-
-    ipos := idx;
-    jdx := 1
-    WHILE (jdx <= ALLD) & (ipos # 0) DO
-      fdx := Pos(bck[jdx],line,0);
-      IF fdx < ipos THEN
-        ipos := fdx;
-        anst := 0;
-        IF jdx > 9 THEN
-          anst := jdx-9;
-        ELSE
-          anst := jdx
-        END;
-      END;
-      INC(jdx);
+    IF anss > 9 THEN
+      total := total + (anss-9)*10
+    ELSE
+      total := total + anss*10
     END;
 
-    ans := ans+anst;
-    total := total + ans;
+    IF anse > 9 THEN
+      total := total+anse-9
+    ELSE
+      total := total+anse
+    END;
+
     IF (proc MOD 50) = 0 THEN
       WriteString('Processed ');WriteCard(proc,4);
       WriteString(' Running total is ');WriteCard(total,5);WriteLn;
