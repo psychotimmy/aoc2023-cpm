@@ -18,7 +18,7 @@ VAR
   line: ARRAY [0..80] OF CHAR;
   fwd: ARRAY [1..ALLD] OF Str5;
   bck: ARRAY [1..ALLD] OF Str5;
-  fdx, idx, ipos, jdx, ans, anst,  total: CARDINAL;
+  fdx, idx, ipos, jdx, ans, anst, proc, total: CARDINAL;
   reply: INTEGER;
 
 PROCEDURE reverse(VAR str: ARRAY OF CHAR);
@@ -66,6 +66,7 @@ BEGIN
   END;
   Connect(calStream,calFile,input);
   total := 0;
+  proc := 0;
   initfb();
   ReadChar(calStream,ch);
   WHILE NOT EOS(calStream) DO
@@ -77,9 +78,11 @@ BEGIN
     END;
     (* Null terminate line *)
     line[idx] := CHAR(0);
+    INC(proc);
 
     ipos := idx;
-    FOR jdx := 1 TO ALLD DO
+    jdx := 1;
+    WHILE (jdx <= ALLD) & (ipos # 0) DO
       fdx := Pos(fwd[jdx],line,0);
       IF fdx < ipos THEN
         ipos := fdx;
@@ -90,13 +93,15 @@ BEGIN
           anst := jdx*10
         END;
       END;
+      INC(jdx);
     END;
 
     ans := anst;
     reverse(line);
 
     ipos := idx;
-    FOR jdx := 1 TO ALLD DO
+    jdx := 1
+    WHILE (jdx <= ALLD) & (ipos # 0) DO
       fdx := Pos(bck[jdx],line,0);
       IF fdx < ipos THEN
         ipos := fdx;
@@ -107,13 +112,15 @@ BEGIN
           anst := jdx
         END;
       END;
+      INC(jdx);
     END;
 
     ans := ans+anst;
     total := total + ans;
-    WriteString('Calibration value is ');WriteCard(ans,5);WriteLn;
-    WriteString('Running total is ');WriteCard(total,5);WriteLn;
-
+    IF (proc MOD 50) = 0 THEN
+      WriteString('Processed ');WriteCard(proc,4);
+      WriteString(' Running total is ');WriteCard(total,5);WriteLn;
+    END;
     ReadChar(calStream,ch);
   END;
 
