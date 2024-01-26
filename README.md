@@ -28,7 +28,7 @@ Day1-2.pas - runs in 47 seconds using the puzzle data.
 
 Day1-2.mod - runs in 4 minutes 15 seconds using the puzzle data, even with a slightly more efficient algorithm than the
 Turbo Pascal version ... Experiments with the suggestions for efficient programming in the FTL Z80 user guide (pg 115-116)
-made no improvement.
+(Dowloaded from: https://www.cpcwiki.eu/index.php/Hisoft_FTL_Modula-2) made no improvement.
 
 Day2-1.pas - runs in 7 seconds using the puzzle data.
 
