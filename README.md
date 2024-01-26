@@ -26,6 +26,8 @@ Day1-1.mod - runs in 10 seconds using the puzzle data.
 
 Day1-2.pas - runs in 47 seconds using the puzzle data.
 
+Day1-2.mod - runs in 6 minutes 15 seconds using the puzzle data with the day1-2.pas algorithm.
+
 Day2-1.pas - runs in 7 seconds using the puzzle data.
 
 Day2-2.pas - runs in 11 seconds using the puzzle data.
