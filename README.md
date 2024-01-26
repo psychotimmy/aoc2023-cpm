@@ -26,7 +26,8 @@ Day1-1.mod - runs in 10 seconds using the puzzle data.
 
 Day1-2.pas - runs in 47 seconds using the puzzle data.
 
-Day1-2.mod - runs in 4 minutes 45 seconds using the puzzle data.
+Day1-2.mod - runs in 4 minutes 15 seconds using the puzzle data, even with a slightly more efficient algorithm than the
+Turbo Pascal version ... 
 
 Day2-1.pas - runs in 7 seconds using the puzzle data.
 
