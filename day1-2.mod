@@ -18,7 +18,7 @@ VAR
   line, lineb: ARRAY [0..70] OF CHAR;
   fwd: ARRAY [1..ALLD] OF Str5;
   bck: ARRAY [1..ALLD] OF Str5;
-  fdx, idx, spos, epos, jdx, anss, anse, proc, total: CARDINAL;
+  llen, fdx, idx, spos, epos, jdx, anss, anse, proc, total: CARDINAL;
   reply: INTEGER;
 
 PROCEDURE reverse(str1: ARRAY OF CHAR; VAR str2: ARRAY OF CHAR);
@@ -80,12 +80,15 @@ BEGIN
     line[idx] := CHAR(0);
     (* And get the reverse *)
     reverse(line,lineb);
+    (* Used to speed while loop up - Pos is horribly slow if the substring *)
+    (* is longer than the string being checked - speeds up by around 30%!  *)
+    llen := Length(line);
 
     spos := idx;
     epos := idx;
     jdx := 1;
     WHILE ((spos > 0) OR (epos > 0)) & (jdx <= ALLD) DO
-      IF spos > 0 THEN
+      IF (spos > 0) & (Length(fwd[jdx]) < llen) THEN
         fdx := Pos(fwd[jdx],line,0);
         IF fdx # HIGH(line)+1 THEN
           IF fdx < spos THEN
@@ -94,7 +97,7 @@ BEGIN
           END
         END
       END;
-      IF epos > 0 THEN
+      IF (epos > 0) & (Length(bck[jdx]) < llen) THEN
         fdx := Pos(bck[jdx],lineb,0);
         IF fdx # HIGH(lineb)+1 THEN
           IF fdx < epos THEN
