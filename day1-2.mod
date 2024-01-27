@@ -27,11 +27,11 @@ VAR i,len: CARDINAL;
 BEGIN
   len := Length(str1);
   FOR i := 0 TO len-1 DO
-    str2[i] := str1[len-i-1];
+    str2[i] := str1[len-i-1]
   END;
   IF HIGH(str2) > len-1 THEN
-    str2[len] := CHAR(0);
-  END;
+    str2[len] := CHAR(0)
+  END
 END reverse;
 
 PROCEDURE initfb();
@@ -51,8 +51,8 @@ BEGIN
   fwd[17] := 'eight';
   fwd[18] := 'nine';
   FOR i := 10 TO ALLD DO
-    reverse(fwd[i],bck[i]);
-  END;
+    reverse(fwd[i],bck[i])
+  END
 END initfb;
 
 BEGIN
@@ -61,7 +61,7 @@ BEGIN
   Lookup(calFile,'day1in.txt',reply);
   IF reply < 0 THEN
     WriteString('day1in.txt not found!');
-    HALT;
+    HALT
   END;
   Connect(calStream,calFile,input);
   total := 0;
@@ -73,7 +73,7 @@ BEGIN
     WHILE (ch <> EOLN) DO
       line[idx] := ch;
       INC(idx);
-      ReadChar(calStream,ch);
+      ReadChar(calStream,ch)
     END;
     INC(proc);
     (* Null terminate line *)
@@ -90,20 +90,20 @@ BEGIN
         IF fdx # HIGH(line)+1 THEN
           IF fdx < spos THEN
             spos := fdx;
-            anss := jdx;
-          END;
-        END;
+            anss := jdx
+          END
+        END
       END;
       IF epos > 0 THEN
         fdx := Pos(bck[jdx],lineb,0);
         IF fdx # HIGH(lineb)+1 THEN
           IF fdx < epos THEN
             epos := fdx;
-            anse := jdx;
-          END;
-        END;
+            anse := jdx
+          END
+        END
       END;
-      INC(jdx);
+      INC(jdx)
     END;
 
     IF anss > 9 THEN
@@ -120,13 +120,13 @@ BEGIN
 
     IF (proc MOD 50) = 0 THEN
       WriteString('Processed ');WriteCard(proc,4);
-      WriteString(' Running total is ');WriteCard(total,5);WriteLn;
+      WriteString(' Running total is ');WriteCard(total,5);WriteLn
     END;
-    ReadChar(calStream,ch);
+    ReadChar(calStream,ch)
   END;
 
   Disconnect(calStream,TRUE);
   WriteString (' '); WriteLn;
   WriteString ('Sum of calibration values is ');
-  WriteCard(total,5); WriteLn;
+  WriteCard(total,5); WriteLn
 END day1p2.
