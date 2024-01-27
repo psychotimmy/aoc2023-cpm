@@ -26,9 +26,10 @@ Day1-1.mod - runs in 10 seconds using the puzzle data.
 
 Day1-2.pas - runs in 47 seconds using the puzzle data.
 
-Day1-2.mod - runs in 4 minutes 15 seconds using the puzzle data, even with a slightly more efficient algorithm than the
+Day1-2.mod - runs in 2 minutes 58 seconds using the puzzle data, even with a slightly more efficient algorithm than the
 Turbo Pascal version ... Experiments with the suggestions for efficient programming in the FTL Z80 user guide (pg 115-116)
-(Dowloaded from: https://www.cpcwiki.eu/index.php/Hisoft_FTL_Modula-2) made no improvement.
+(Dowloaded from: https://www.cpcwiki.eu/index.php/Hisoft_FTL_Modula-2) made no improvement, but eliminating the use of
+Pos if the substring couldn't possibly be in the check string reduced execution time by around 30% (from 4m 15s)!
 
 Day2-1.pas - runs in 7 seconds using the puzzle data.
 
