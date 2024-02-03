@@ -29,9 +29,9 @@ Day1-1.pas - runs in 18 seconds using the puzzle data.
 
 Day1-1.mod - runs in 10 seconds using the puzzle data.
 
-Day1-1.bas - runs in 24 seconds using the puzzle data.
-
 Day1-1.c - runs in 16 seconds using the puzzle data.
+
+Day1-1.bas - runs in 24 seconds using the puzzle data.
 
 Day1-2.pas - runs in 47 seconds using the puzzle data.
 
