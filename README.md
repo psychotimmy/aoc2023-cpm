@@ -42,6 +42,8 @@ Pos if the substring couldn't possibly be in the check string reduced execution 
 
 Day1-2.c - runs in 1 minute 47 seconds using the puzzle data.
 
+Day1-2.bas - runs in 1 minute 39 seconds using the puzzle data.
+
 Day2-1.pas - runs in 7 seconds using the puzzle data.
 
 Day2-2.pas - runs in 11 seconds using the puzzle data.
