@@ -1,7 +1,7 @@
 # aoc2023-cpm
-Advent of Code 2023 - Turbo Pascal 3.01A, FTL Modula-2 1.30 and Aztec C 1.06D under CP/M 2.2
+Advent of Code 2023 - Turbo Pascal 3.01A, FTL Modula-2 1.30, CBASIC80 2.0 and Aztec C 1.06D under CP/M 2.2
 
-Some examples from Advent of Code 2023 written in Turbo Pascal 3.01A, FTL Modula-2 1.30 and Aztec C 1.06D under CP/M 2.2. 
+Some examples from Advent of Code 2023 written in Turbo Pascal 3.01A, FTL Modula-2 1.30, CBASIC80 2.0 and Aztec C 1.06D under CP/M 2.2. 
 
 Converted from my original solutions written using Free Pascal on a Raspberry Pi.
 
@@ -15,6 +15,8 @@ In Turbo Pascal, use the COM compilation option to create day[number]-[part].com
 
 In FTL Modula-2, compile from ME (or use M2 directly on the .mod), link with ML day[number]-[part] /D to create a .com executable.
 
+In CBASIC80, compile with cb80 day[number]-[part] and link with lk80 day[number]-[part] to create a .com executable.
+
 In Aztec C, compile with CZ (or CC) day[number]-[part].c, assemble with AS -ZAP day[number]-[part].asm and link with
 LN day[number]-[part].o c.lib to create day[number]-[part].com
 
@@ -26,6 +28,8 @@ current at the time. Performance enhancements to this library are ongoing!
 Day1-1.pas - runs in 18 seconds using the puzzle data.
 
 Day1-1.mod - runs in 10 seconds using the puzzle data.
+
+Day1-1.bas - runs in 24 seconds using the puzzle data.
 
 Day1-1.c - runs in 16 seconds using the puzzle data.
 
